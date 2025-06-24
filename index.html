@@ -1,31 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safe Embed</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-      background: #111;
-      color: white;
-    }
-    button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      background: #00cc99;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-  <button onclick="alert('Hello from JS!')">Click Me</button>
+
+    <div class="container">
+        <div class="loader"></div>
+        <p>Redirecting you to a random page...</p>
+    </div>
+
+    <script>
+        // --- Place your destination URLs in this array ---
+        const destinationUrls = [
+            "https://www.google.com",
+            "https://www.bing.com",
+            "https://www.duckduckgo.com"
+        ];
+
+        /**
+         * Selects a random item from an array.
+         * @param {Array} arr The array to select from.
+         * @returns {*} A random item from the array.
+         */
+        function getRandomItem(arr) {
+            // Get a random index from 0 to the array's length - 1
+            const randomIndex = Math.floor(Math.random() * arr.length);
+            
+            // Get the item at that index
+            const item = arr[randomIndex];
+            
+            return item;
+        }
+
+        // Get a random URL from the array
+        const randomUrl = getRandomItem(destinationUrls);
+
+        // Redirect the browser to the random URL
+        window.location.href = randomUrl;
+    </script>
+
 </body>
 </html>
