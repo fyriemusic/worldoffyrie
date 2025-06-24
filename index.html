@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      color: white;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .navbar .logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .navbar .links a {
+      margin-left: 1rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar .links a:hover {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">MySite</div>
+    <div class="links">
+      <a href="#home" target="_parent">Home</a>
+      <a href="#about" target="_parent">About</a>
+      <a href="#music" target="_parent">Music</a>
+      <a href="#contact" target="_parent">Contact</a>
+    </div>
+  </nav>
+</body>
+</html>
